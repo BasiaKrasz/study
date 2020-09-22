@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospacem;
+}
+
+body {
+    background-image: url(screen.jpg);
+    width: calc(100vw - 100px);
+    height: 100vh;
+    background-position: 60% 18.4%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+#conteiner {
+    /* font-size: 1.2vmax; */
+    font-size: calc(0.7vh + 0.7vw);
+    position: absolute;
+    top: 18.4%;
+    left: 60%;
+    color: rgb(136, 205, 35);
+    text-shadow: 0 0 0.1em rgb(136, 205, 35), 0 0 0.2em rgb(136, 205, 35);
+}
+
+.cursor {
+    opacity: 0;
+}
+
+#r {
+    position: relative;
+    width: 60vw;
+    transform: rotate(2.5deg);
+}
