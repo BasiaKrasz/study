@@ -13,38 +13,61 @@
             margin: auto;
             text-align: center;
             font-family: 'Roboto Slab', serif;
+            background-color: lightgray;
+            font-size: 18px;
         }
 
         #wrap {
-            width: 176px;
-            height: 176px;
+            width: 266px;
+            height: 266px;
+            border: 3px solid DimGrey;
+            border-top-color: white;
+            border-left-color: white;
+        }
+
+        #conteiner {
+            margin: 7px;
+            width: 246px;
+            height: 246px;
+            border: 3px solid DimGrey;
+            border-bottom-color: white;
+            border-right-color: white;
 
         }
 
         .item {
-            width: 20px;
-            height: 20px;
-            margin: 1px;
-            background: darkgray;
+            width: 30px;
+            height: 30px;
+            margin: 0px;
             text-align: center;
             float: left;
-            line-height: 16px;
+            border: 3px solid DimGrey;
+            border-top-color: white;
+            border-left-color: white;
         }
 
         .bomb {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             background-image: url("bomb.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-color: white;
-
+            border: 1px solid darkgray;
         }
 
         .nobomb {
             background-color: lightgray;
-            border: 1px solid gray;
+            border: 1px solid darkgray;
+        }
+
+        .flag {
+            background-image: url("flag.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: lightgray;
+
         }
 
         div span {
@@ -63,74 +86,75 @@
 <body>
     <button id="newgame">New game</button>
     <div id="wrap">
+        <div id="conteiner">
 
-        <div class="item" id="0"><span></span></div>
-        <div class="item" id="1"><span></span></div>
-        <div class="item" id="2"><span></span></div>
-        <div class="item" id="3"><span></span></div>
-        <div class="item" id="4"><span></span></div>
-        <div class="item" id="5"><span></span></div>
-        <div class="item" id="6"><span></span></div>
-        <div class="item" id="7"><span></span></div>
-        <div class="item" id="8"><span></span></div>
-        <div class="item" id="9"><span></span></div>
-        <div class="item" id="10"><span></span></div>
-        <div class="item" id="11"><span></span></div>
-        <div class="item" id="12"><span></span></div>
-        <div class="item" id="13"><span></span></div>
-        <div class="item" id="14"><span></span></div>
-        <div class="item" id="15"><span></span></div>
-        <div class="item" id="16"><span></span></div>
-        <div class="item" id="17"><span></span></div>
-        <div class="item" id="18"><span></span></div>
-        <div class="item" id="19"><span></span></div>
-        <div class="item" id="20"><span></span></div>
-        <div class="item" id="21"><span></span></div>
-        <div class="item" id="22"><span></span></div>
-        <div class="item" id="23"><span></span></div>
-        <div class="item" id="24"><span></span></div>
-        <div class="item" id="25"><span></span></div>
-        <div class="item" id="26"><span></span></div>
-        <div class="item" id="27"><span></span></div>
-        <div class="item" id="28"><span></span></div>
-        <div class="item" id="29"><span></span></div>
-        <div class="item" id="30"><span></span></div>
-        <div class="item" id="31"><span></span></div>
-        <div class="item" id="32"><span></span></div>
-        <div class="item" id="33"><span></span></div>
-        <div class="item" id="34"><span></span></div>
-        <div class="item" id="35"><span></span></div>
-        <div class="item" id="36"><span></span></div>
-        <div class="item" id="37"><span></span></div>
-        <div class="item" id="38"><span></span></div>
-        <div class="item" id="39"><span></span></div>
-        <div class="item" id="40"><span></span></div>
-        <div class="item" id="41"><span></span></div>
-        <div class="item" id="42"><span></span></div>
-        <div class="item" id="43"><span></span></div>
-        <div class="item" id="44"><span></span></div>
-        <div class="item" id="45"><span></span></div>
-        <div class="item" id="46"><span></span></div>
-        <div class="item" id="47"><span></span></div>
-        <div class="item" id="48"><span></span></div>
-        <div class="item" id="49"><span></span></div>
-        <div class="item" id="50"><span></span></div>
-        <div class="item" id="51"><span></span></div>
-        <div class="item" id="52"><span></span></div>
-        <div class="item" id="53"><span></span></div>
-        <div class="item" id="54"><span></span></div>
-        <div class="item" id="55"><span></span></div>
-        <div class="item" id="56"><span></span></div>
-        <div class="item" id="57"><span></span></div>
-        <div class="item" id="58"><span></span></div>
-        <div class="item" id="59"><span></span></div>
-        <div class="item" id="60"><span></span></div>
-        <div class="item" id="61"><span></span></div>
-        <div class="item" id="62"><span></span></div>
-        <div class="item" id="63"><span></span></div>
+            <div class="item" id="0"><span></span></div>
+            <div class="item" id="1"><span></span></div>
+            <div class="item" id="2"><span></span></div>
+            <div class="item" id="3"><span></span></div>
+            <div class="item" id="4"><span></span></div>
+            <div class="item" id="5"><span></span></div>
+            <div class="item" id="6"><span></span></div>
+            <div class="item" id="7"><span></span></div>
+            <div class="item" id="8"><span></span></div>
+            <div class="item" id="9"><span></span></div>
+            <div class="item" id="10"><span></span></div>
+            <div class="item" id="11"><span></span></div>
+            <div class="item" id="12"><span></span></div>
+            <div class="item" id="13"><span></span></div>
+            <div class="item" id="14"><span></span></div>
+            <div class="item" id="15"><span></span></div>
+            <div class="item" id="16"><span></span></div>
+            <div class="item" id="17"><span></span></div>
+            <div class="item" id="18"><span></span></div>
+            <div class="item" id="19"><span></span></div>
+            <div class="item" id="20"><span></span></div>
+            <div class="item" id="21"><span></span></div>
+            <div class="item" id="22"><span></span></div>
+            <div class="item" id="23"><span></span></div>
+            <div class="item" id="24"><span></span></div>
+            <div class="item" id="25"><span></span></div>
+            <div class="item" id="26"><span></span></div>
+            <div class="item" id="27"><span></span></div>
+            <div class="item" id="28"><span></span></div>
+            <div class="item" id="29"><span></span></div>
+            <div class="item" id="30"><span></span></div>
+            <div class="item" id="31"><span></span></div>
+            <div class="item" id="32"><span></span></div>
+            <div class="item" id="33"><span></span></div>
+            <div class="item" id="34"><span></span></div>
+            <div class="item" id="35"><span></span></div>
+            <div class="item" id="36"><span></span></div>
+            <div class="item" id="37"><span></span></div>
+            <div class="item" id="38"><span></span></div>
+            <div class="item" id="39"><span></span></div>
+            <div class="item" id="40"><span></span></div>
+            <div class="item" id="41"><span></span></div>
+            <div class="item" id="42"><span></span></div>
+            <div class="item" id="43"><span></span></div>
+            <div class="item" id="44"><span></span></div>
+            <div class="item" id="45"><span></span></div>
+            <div class="item" id="46"><span></span></div>
+            <div class="item" id="47"><span></span></div>
+            <div class="item" id="48"><span></span></div>
+            <div class="item" id="49"><span></span></div>
+            <div class="item" id="50"><span></span></div>
+            <div class="item" id="51"><span></span></div>
+            <div class="item" id="52"><span></span></div>
+            <div class="item" id="53"><span></span></div>
+            <div class="item" id="54"><span></span></div>
+            <div class="item" id="55"><span></span></div>
+            <div class="item" id="56"><span></span></div>
+            <div class="item" id="57"><span></span></div>
+            <div class="item" id="58"><span></span></div>
+            <div class="item" id="59"><span></span></div>
+            <div class="item" id="60"><span></span></div>
+            <div class="item" id="61"><span></span></div>
+            <div class="item" id="62"><span></span></div>
+            <div class="item" id="63"><span></span></div>
 
+        </div>
     </div>
-
     <script src="saper.js"></script>
 </body>
 

@@ -1,43 +1,41 @@
 // get DOM
 const newGameButton = document.getElementById("newgame");
-const square = [...document.querySelectorAll(".item")];
+const squares = [...document.querySelectorAll(".item")];
 const wrap = document.getElementById("wrap");
 
 // global scope
 const indexBombs = [];
-const sumaTab = [];
+const sumTab = new Array(64);
 
 // first viev
 if (indexBombs.length == 0) {
     wrap.style.display = "none";
 };
 
-
 const randomBomb = () => {
 
     // cleaning the game
-    square.forEach(item => item.textContent = "");
+    squares.forEach(item => {
+        item.textContent = "";
+        item.style.backgroundColor = 'lightgray';
+    });
     indexBombs.length = 0;
     const normalNumbers = [];
     const edgeLeftNumbers = [];
     const edgeRightNumbers = [];
-    sumaTab.length = 65;
-    sumaTab.fill(0, 0, 65);
+    sumTab.fill(0, 0, 64);
     wrap.style.display = "block";
 
     // generating bombs
-    square.forEach((item, index) => {
-        square[index].classList.remove("bomb", "nobomb");
+    squares.forEach((_, index) => {
+        squares[index].classList.remove("bomb", "nobomb", "flag");
     });
     while (indexBombs.length < 8) {
         let random = (Math.floor((Math.random() * 65)));
-        if (indexBombs.indexOf(random) === -1) {
+        if (!indexBombs.includes(random)) {
             indexBombs.push(random)
         }
     };
-
-    console.log(indexBombs);
-
     // divide for 3 cases
     indexBombs.forEach((item) => {
         if (item % 8 == 0) {
@@ -57,7 +55,7 @@ const randomBomb = () => {
         indexAdd.forEach((i) => {
             let c = item + i;
             if (c >= 0 && c <= 63) {
-                sumaTab[c] += 1
+                sumTab[c] += 1
             }
         });
     });
@@ -69,7 +67,7 @@ const randomBomb = () => {
         indexAdd.forEach((i) => {
             let c = item + i;
             if (c >= 0 && c <= 63) {
-                sumaTab[c] += 1
+                sumTab[c] += 1
             }
         });
     });
@@ -81,30 +79,50 @@ const randomBomb = () => {
         indexAdd.forEach((i) => {
             let c = item + i;
             if (c >= 0 && c <= 63) {
-                sumaTab[c] += 1
+                sumTab[c] += 1
             }
         });
     });
-    console.log(sumaTab);
 };
+
 newGameButton.onclick = randomBomb;
 
 // game
 
-for (let i = 0; i < square.length; i++) {
-    const checkBomb = (e) => {
-        let divNumber = e.target.id;
-        if (indexBombs.includes(parseInt(divNumber))) {
-            e.target.classList.toggle("bomb");
+const checkBomb = (e) => {
+    let square = e.target;
 
-        } else {
-            e.target.classList.toggle("nobomb");
-            let text = sumaTab[divNumber];
+    let divNumber = parseInt(e.target.id);
+
+    if (indexBombs.includes(divNumber) && square.classList.length < 2) {
+
+        console.log(indexBombs);
+        indexBombs.forEach(item => {
+            squares[item].classList.add("bomb")
+        });
+        if (square.classList.length < 3) {
+            square.style.backgroundColor = "rgb(231, 6, 6)"
+        }
+
+    } else {
+        if (square.classList.length < 2) {
+            square.classList.add("nobomb");
+            let text = sumTab[divNumber];
             if (text != 0) {
-                e.target.textContent = text;
+                square.textContent = text;
             }
         }
-        console.log(e.target);
-    };
-    square[i].addEventListener("click", checkBomb);
+    }
+};
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("click", checkBomb);
+    squares[i].addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        if (e.target.classList.length < 2) {
+            e.target.classList.add("flag")
+        } else {
+            e.target.classList.remove("flag")
+        }
+    }, false);
 };
